@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db-posts:
+    image: postgres:13.5-alpine
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: post
+      PGDATA: /var/lib/postgresql/data/pgdata
+    container_name: postgres-db-post
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/pgdata
+    restart: always
+  app:
+    image: 'post_service:latest'
+    build:
+      context: ../../..
+    container_name: app
+    depends_on:
+      - db-posts
+
+
+      docker run --name inst -p 8080:8080 --net insta_net -d abc320a6ae60do
+      //docker run --name postgres_inst -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=post -e PGDATA=/var/lib/postgresql/data/pgdata --net insta_net -d postgres
