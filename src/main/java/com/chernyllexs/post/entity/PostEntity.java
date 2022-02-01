@@ -1,6 +1,7 @@
-package com.chernyllexs.post.entitys;
+package com.chernyllexs.post.entity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 @Entity
@@ -10,15 +11,16 @@ public class PostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
     private Long postId;
-    private String userId;
-    private String photoId;
+    private Long userId;
+    private Long photoId;
     private String postText;
-    private ZonedDateTime postDate;
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime postDate;
 
     public PostEntity() {
     }
 
-    public PostEntity(Long postId, String userId, String photoId, String postText, ZonedDateTime postDate) {
+    public PostEntity(Long postId, Long userId, Long photoId, String postText, LocalDateTime postDate) {
         this.postId = postId;
         this.userId = userId;
         this.photoId = photoId;
@@ -34,19 +36,19 @@ public class PostEntity {
         this.postId = postId;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public String getPhotoId() {
+    public Long getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(String photoId) {
+    public void setPhotoId(Long photoId) {
         this.photoId = photoId;
     }
 
@@ -58,11 +60,11 @@ public class PostEntity {
         this.postText = postText;
     }
 
-    public ZonedDateTime getPostDate() {
+    public LocalDateTime getPostDate() {
         return postDate;
     }
 
-    public void setPostDate(ZonedDateTime postDate) {
+    public void setPostDate(LocalDateTime postDate) {
         this.postDate = postDate;
     }
 

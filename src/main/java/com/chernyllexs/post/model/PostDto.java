@@ -1,46 +1,38 @@
-package com.chernyllexs.post.models;
+package com.chernyllexs.post.model;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 public class PostDto {
-    private Long postId;
-    private String userId;
-    private String photoId;
+    private Long userId;
+    private Long photoId;
     private String postText;
-    private ZonedDateTime postDate;
+    private LocalDateTime postDate;
 
     public PostDto() {
     }
 
-    public PostDto(Long postId, String userId, String photoId, String postText, ZonedDateTime postDate) {
-        this.postId = postId;
+    public PostDto(Long userId, Long photoId, String postText, LocalDateTime postDate) {
         this.userId = userId;
         this.photoId = photoId;
         this.postText = postText;
         this.postDate = postDate;
     }
 
-    public Long getPostId() {
-        return postId;
-    }
 
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
-
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public String getPhotoId() {
+    public Long getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(String photoId) {
+    public void setPhotoId(Long photoId) {
         this.photoId = photoId;
     }
 
@@ -52,11 +44,11 @@ public class PostDto {
         this.postText = postText;
     }
 
-    public ZonedDateTime getPostDate() {
+    public LocalDateTime getPostDate() {
         return postDate;
     }
 
-    public void setPostDate(ZonedDateTime postDate) {
+    public void setPostDate(LocalDateTime postDate) {
         this.postDate = postDate;
     }
 
@@ -67,7 +59,6 @@ public class PostDto {
 
         PostDto postDto = (PostDto) o;
 
-        if (!getPostId().equals(postDto.getPostId())) return false;
         if (!getUserId().equals(postDto.getUserId())) return false;
         if (!getPhotoId().equals(postDto.getPhotoId())) return false;
         if (!getPostText().equals(postDto.getPostText())) return false;
@@ -76,8 +67,8 @@ public class PostDto {
 
     @Override
     public int hashCode() {
-        int result = getPostId().hashCode();
-        result = 31 * result + getUserId().hashCode();
+
+        int result =  getUserId().hashCode();
         result = 31 * result + getPhotoId().hashCode();
         result = 31 * result + getPostText().hashCode();
         result = 31 * result + getPostDate().hashCode();
@@ -87,7 +78,6 @@ public class PostDto {
     @Override
     public String toString() {
         return "PostDto{" +
-                "postId=" + postId +
                 ", userId='" + userId + '\'' +
                 ", photoId='" + photoId + '\'' +
                 ", postText='" + postText + '\'' +

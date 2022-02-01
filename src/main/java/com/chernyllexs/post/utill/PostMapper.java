@@ -1,23 +1,24 @@
 package com.chernyllexs.post.utill;
 
-import com.chernyllexs.post.entitys.PostEntity;
-import com.chernyllexs.post.models.PostDto;
+import com.chernyllexs.post.entity.PostEntity;
+import com.chernyllexs.post.model.PostDto;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
-public class PostMapper {
-    private final ModelMapper modelMapper;
+import java.util.Objects;
 
-    public PostMapper() {
-        this.modelMapper = new ModelMapper();
-    }
+@Component
+public class PostMapper {
+    @Autowired
+    private ModelMapper modelMapper;
 
     public PostDto convertToDto(PostEntity postEntity){
-        return modelMapper.map(postEntity, PostDto.class);
+        return Objects.isNull(postEntity) ? null : modelMapper.map(postEntity, PostDto.class);
     }
 
     public PostEntity convertToEntity(PostDto postDto){
-        return modelMapper.map(postDto, PostEntity.class);
+        return Objects.isNull(postDto) ? null :  modelMapper.map(postDto, PostEntity.class);
     }
 }

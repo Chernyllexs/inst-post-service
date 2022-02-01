@@ -1,13 +1,14 @@
-package com.chernyllexs.post.services;
+package com.chernyllexs.post.service;
 
-import com.chernyllexs.post.entitys.PostEntity;
-import com.chernyllexs.post.models.PostDto;
+import com.chernyllexs.post.entity.PostEntity;
+import com.chernyllexs.post.model.PostDto;
 import com.chernyllexs.post.repository.PostRepository;
 import com.chernyllexs.post.utill.PostMapper;
 import com.chernyllexs.post.utill.PostNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +27,9 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public void addPost(PostDto newPostDto) {
-        newPostDto.setPostDate(ZonedDateTime.now());
-        postRepository.save(postMapper.convertToEntity(newPostDto));
+    public PostDto addPost(PostDto newPostDto) {
+        newPostDto.setPostDate(LocalDateTime.now());
+        return postMapper.convertToDto(postRepository.save(postMapper.convertToEntity(newPostDto)));
     }
 
     @Override
@@ -45,5 +46,15 @@ public class PostServiceImpl implements PostService{
     public PostDto getPostById(Long id) {
         PostEntity postEntity = postRepository.findById(id).orElseThrow(() -> new PostNotFoundException("Post not found: id = " + id));
         return postMapper.convertToDto(postEntity);
+    }
+
+    @Override
+    public List<PostDto> getPostsByUserId(Long id) {
+        Iterable<PostEntity> iterable = postRepository.findByUserIdOrderByPostDate(id);
+        ArrayList<PostDto> postsDto = new ArrayList<>();
+        for(PostEntity postEntity: iterable){
+            postsDto.add(postMapper.convertToDto(postEntity));
+        }
+        return postsDto;
     }
 }
