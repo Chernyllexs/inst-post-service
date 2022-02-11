@@ -12,6 +12,13 @@ public class PostDto {
     public PostDto() {
     }
 
+    public PostDto(CreatePostDto createPostDto, Long photoId){
+        this.userId = createPostDto.getUserId();
+        this.photoId = photoId;
+        this.postText = createPostDto.getPostText();
+        this.postDate = LocalDateTime.now();
+    }
+
     public PostDto(Long userId, Long photoId, String postText, LocalDateTime postDate) {
         this.userId = userId;
         this.photoId = photoId;

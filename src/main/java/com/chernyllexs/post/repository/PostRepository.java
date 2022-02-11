@@ -4,5 +4,10 @@ import com.chernyllexs.post.entity.PostEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<PostEntity, Long> {
+
     Iterable<PostEntity> findByUserIdOrderByPostDate(Long userId);
+
+    Boolean existsByPostId(Long postId);
+
+    void deleteByUserId(Long userId);
 }
