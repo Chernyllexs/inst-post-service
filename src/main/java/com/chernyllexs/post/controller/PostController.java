@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/post")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PostController {
     @Autowired
     private PostServiceImpl postService;
@@ -23,16 +24,23 @@ public class PostController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<PostDto> createPost(@RequestBody CreatePostDto createPostDto, @RequestParam MultipartFile file) {
+    public ResponseEntity<PostDto> createPost(@ModelAttribute CreatePostDto createPostDto,
+                                              @RequestParam MultipartFile file) {
         return ResponseEntity.ok().body(postService.createPost(createPostDto, file));
     }
 
-    @GetMapping("get-post-by-id/{postId}")
+    /*@PostMapping("/create")
+    public ResponseEntity<PostDto> createPost(@RequestPart("json") CreatePostDto createPostDto,
+                                              @RequestPart("file") MultipartFile file) {
+        return ResponseEntity.ok().body(postService.createPost(createPostDto, file));
+    }*/
+
+    @GetMapping("/get-post-by-id/{postId}")
     public ResponseEntity<PostDto> getPost(@PathVariable Long postId) {
         return ResponseEntity.ok().body(postService.getPostById(postId));
     }
 
-    @GetMapping("get-all-posts-for-user/{userId}")
+    @GetMapping("/get-all-posts-for-user/{userId}")
     public ResponseEntity<List<PostDto>> getPostByUserId(@PathVariable("userId") Long userId){
         return ResponseEntity.ok().body(postService.getPostsByUserId(userId));
     }
