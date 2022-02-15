@@ -2,15 +2,16 @@
 This service runs on port 9001 and is responsible for creating and views posts.
 
 #### Function:
-* добавить пост;
-    * отправить фото в photo-service;
-* получить все посты по userId;
-* получить пост по postId;
-* удалить все посты по userId;
-* удалить пост по postId;
-* проверка наличия поста;
-* редактирование поста;
-    * редактирование фото;
+
+* add a post;
+* send a photo to photo-service;
+    * get all posts by user Id;
+* get a post by postId;
+    * delete all posts by user Id;
+* delete a post by postId;
+* checking the presence of the post;
+* editing a post;
+* photo editing;
 
 #### Endpoints:
 * POST /post/create (add a post);
@@ -19,33 +20,16 @@ This service runs on port 9001 and is responsible for creating and views posts.
 * GET /post/check-post/{postId};
 * DELETE /post/delete-all-posts-for-user/{userId};
 * DELETE /post/delete-post-by-id/{postId};
-* PATCH /post/update
+* ???PATCH /post/update
 
 #### DTOs:
-* PostDto
+* PostDto:
+    * Long postId;
     * Long userId;
     * Long photoId;
     * String postText;
     * LocalDateTime postDate;
-==========
 
-# COMMENTS SERVICE
-
-#### Function:
-* add a comment to the post;
-    * check for a post to add a comment;
-* get all the comments for the post;
-* get the last five comments;
-* delete a comment;
-* delete all user comments;
-* delete all comments for the post;
-
-
-#### Endpoints:
-* POST /comment (add a comment for this post);
-* GET /comment/get-all-comment-for-post/{postId};
-* GET /comment/get-five-last-comment-for-post/{postId};
-* DELETE /comment/delete-all-user-comments/{userId};
-* DELETE /comment/delete-all-comments-for-post/{postId};
-* DELETE /comment/delete-comment/{commentId};
-
+* CreatedPostDto:
+    * Long userId;
+    * private String postText;

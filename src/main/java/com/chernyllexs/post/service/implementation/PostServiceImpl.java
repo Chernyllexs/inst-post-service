@@ -1,9 +1,11 @@
-package com.chernyllexs.post.service;
+package com.chernyllexs.post.service.implementation;
 
 import com.chernyllexs.post.entity.PostEntity;
 import com.chernyllexs.post.model.CreatePostDto;
 import com.chernyllexs.post.model.PostDto;
 import com.chernyllexs.post.repository.PostRepository;
+import com.chernyllexs.post.service.PostService;
+import com.chernyllexs.post.service.implementation.PhotoServiceImpl;
 import com.chernyllexs.post.utill.PostMapper;
 import com.chernyllexs.post.utill.PostNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
     @Autowired
     private PostRepository postRepository;
 

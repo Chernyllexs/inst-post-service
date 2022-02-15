@@ -2,8 +2,7 @@ package com.chernyllexs.post.controller;
 
 import com.chernyllexs.post.model.CreatePostDto;
 import com.chernyllexs.post.model.PostDto;
-import com.chernyllexs.post.service.PhotoServiceImpl;
-import com.chernyllexs.post.service.PostServiceImpl;
+import com.chernyllexs.post.service.implementation.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
