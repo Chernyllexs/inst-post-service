@@ -15,15 +15,4 @@ public class PostServiceApp {
     public static void main(String[] args) {
         SpringApplication.run(PostServiceApp.class);
     }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.STRICT)
-                .setFieldMatchingEnabled(true)
-                .setSkipNullEnabled(true)
-                .setFieldAccessLevel(PRIVATE);
-        return mapper;
-    }
 }

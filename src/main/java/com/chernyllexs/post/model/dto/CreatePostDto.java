@@ -1,4 +1,4 @@
-package com.chernyllexs.post.model;
+package com.chernyllexs.post.model.dto;
 
 public class CreatePostDto {
     private Long userId;

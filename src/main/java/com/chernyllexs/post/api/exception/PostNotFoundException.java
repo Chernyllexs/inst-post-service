@@ -1,4 +1,4 @@
-package com.chernyllexs.post.utill;
+package com.chernyllexs.post.api.exception;
 
 public class PostNotFoundException extends RuntimeException{
     public PostNotFoundException(String message) {

@@ -1,7 +1,6 @@
-package com.chernyllexs.post.model;
+package com.chernyllexs.post.model.dto;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
 public class PostDto {
     private Long postId;

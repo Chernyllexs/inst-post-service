@@ -1,8 +1,7 @@
-package com.chernyllexs.post.entity;
+package com.chernyllexs.post.model.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "posts")
