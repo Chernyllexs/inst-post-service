@@ -20,3 +20,18 @@ spring:
   cloud:
     loadbalancer:
       enabled: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/auth/realms/inst-project/protocol/openid-connect/certs
+
+
+#security:
+#  oauth2:
+#    resource:
+#      id: inst-post-service
+#      token-info-uri: http://localhost:8080/auth/realms/inst-project/protocol/openid-connect/token/introspect
+#      user-info-uri: http://localhost:8080/auth/realms/inst-project/protocol/openid-connect/userinfo
+#      jwt:
+#        key-value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgCZ/HTarAWtGi/I3P9LA4TKWMtHxSxtNmKc/sqYJFHHUduMVDmYHsIW7Vhg7lulmSWQVwEaKNLswKUyeHZvzJqob1Gv4itsJWVHOPHux5j1W4/SsOXVMiYicIL29macZwxSPDxn16NczAmRZ8lE2WNOnGZKr+EJeTqkQZ01VcNwbxsbMWomfNhYLNsppz4YY7gQ5swaxwNbeAc1f9WWc0t+YGR/gE8dFSoAlvoMZNXwzYHGeHJI9anluLF8nzEmjB8cIQSzLluup6cUA/QfC5Ek8MS4tZ8Kdu0bk9BIS1D4+tOkE35gHJYPgVFywLOwC12aJ/sruOsyQcYLz9YDzFwIDAQAB
