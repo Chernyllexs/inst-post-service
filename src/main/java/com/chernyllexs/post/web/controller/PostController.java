@@ -32,7 +32,7 @@ public class PostController {
         return ResponseEntity.ok().body(postService.getPostById(postId));
     }
 
-    @RolesAllowed({"ROLE_USER", "admin"})
+    @RolesAllowed({"user","admin"})
     @GetMapping("/get-all-posts-for-user/{userId}")
     public ResponseEntity<List<PostDto>> getPostByUserId(@PathVariable("userId") Long userId) {
         return ResponseEntity.ok().body(postService.getPostsByUserId(userId));
@@ -49,7 +49,7 @@ public class PostController {
         postService.deletePostById(postId);
     }
 
-
+    @RolesAllowed("user")
     @GetMapping("/get-paginated/{pageNo}/{pageSize}")
     ResponseEntity<PagingPostDto> getPaginatedPost(@PathVariable int pageNo, @PathVariable int pageSize) {
         return ResponseEntity.ok().body(postService.getPaginated(pageNo, pageSize));

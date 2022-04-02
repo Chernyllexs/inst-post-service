@@ -56,7 +56,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.13" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.6.1" level="project" />
@@ -103,6 +102,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-rsa:1.0.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.68" level="project" />
@@ -148,26 +148,21 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-cache:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: com.stoyanr:evictor:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-starter:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-2-adapter:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-adapter-core:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-core:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-common:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-authz-client:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:spring-boot-container-bundle:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-security-adapter:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-adapter-spi:16.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.keycloak:keycloak-adapter-core:16.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-starter:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-2-adapter:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-boot-adapter-core:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-core:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-common:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-authz-client:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:spring-boot-container-bundle:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-adapter-core:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-spring-security-adapter:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.keycloak:keycloak-adapter-spi:17.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.68" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-oauth2-resource-server:5.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-oauth2-core:5.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-oauth2-jose:5.6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.nimbusds:nimbus-jose-jwt:9.14" level="project" />
-    <orderEntry type="library" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
   </component>
 </module>
